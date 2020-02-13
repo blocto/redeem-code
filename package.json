@@ -1,0 +1,21 @@
+{
+  "name": "redeem-code",
+  "version": "0.0.1",
+  "description": "Redeem code contract",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/portto/redeem-code.git"
+  },
+  "engines": {
+    "npm": ">=5",
+    "node": ">=8"
+  },
+  "author": "portto",
+  "license": "MIT",
+  "scripts": {
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^2.4.0",
+    "truffle-hdwallet-provider": "^1.0.17"
+  }
+}
