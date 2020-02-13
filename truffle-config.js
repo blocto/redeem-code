@@ -62,7 +62,7 @@ module.exports = {
     // Useful for deploying to a public network.
     // NB: It's important to wrap the provider as a function.
     mainnet: {
-      provider: () => new HDWalletProvider(mnemonic, 'https://mainnet.infura.io/v3/91334df649974ecf9ee548a6ad8a381f'),
+      provider: () => new HDWalletProvider(mnemonic, 'https://mainnet.infura.io/v3/337d0980668e47dfb0bdc30d9bf872af'),
       network_id: 1, // Ethereum Mainnet id
       gas: 5500000,
       gasPrice: 3000000000,
@@ -74,7 +74,7 @@ module.exports = {
     // Useful for deploying to a public network.
     // NB: It's important to wrap the provider as a function.
     rinkeby: {
-      provider: () => new HDWalletProvider(mnemonic, 'https://rinkeby.infura.io/v3/91334df649974ecf9ee548a6ad8a381f'),
+      provider: () => new HDWalletProvider(mnemonic, 'https://rinkeby.infura.io/v3/337d0980668e47dfb0bdc30d9bf872af'),
       network_id: 4, // Rinkeby id
       gas: 5500000,
       gasPrice: 2000000000,
