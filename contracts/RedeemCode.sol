@@ -106,7 +106,7 @@ contract RedeemCode is Ownable {
         );
 
         // Transfer ETH
-        msgSender.transfer(redeemAmount);
+        _msgSender().transfer(redeemAmount);
         claimable[_redeemCodeAddress] = false;
     }
 }
