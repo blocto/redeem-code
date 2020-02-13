@@ -26,7 +26,7 @@ contract RedeemCode is Ownable {
     /**
      * @dev Add multiple redeem code addresses
      */
-    function addRedeemCodes(address[] _redeemCodeAddresses)
+    function addRedeemCodes(address[] memory _redeemCodeAddresses)
         public
         onlyOwner
     {
