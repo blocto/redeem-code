@@ -3,14 +3,18 @@ pragma solidity >0.5.0;
 import "@openzeppelin/contracts/Ownership/Ownable.sol";
 
 contract RedeemCode is Ownable {
-    /*
+    /**
      * ----- Contract Variables -----
      */
     mapping(address => bool) public claimable;
     uint256 public redeemAmount = 0.01 ether;
 
-    /*
+    /**
      * ----- Owner Methods -----
+     */
+
+    /**
+     * @dev Add a redeem code address
      */
     function addRedeemCode(address _redeemCodeAddress)
         public
@@ -19,6 +23,9 @@ contract RedeemCode is Ownable {
         claimable[_redeemCodeAddress] = true;
     }
 
+    /**
+     * @dev Add multiple redeem code addresses
+     */
     function addRedeemCodes(address[] _redeemCodeAddresses)
         public
         onlyOwner
@@ -28,6 +35,9 @@ contract RedeemCode is Ownable {
         }
     }
 
+    /**
+     * @dev Update redeem amount for each redeem code
+     */
     function setRedeemAmount(uint256 _redeemAmount)
         public
         onlyOwner
@@ -35,6 +45,9 @@ contract RedeemCode is Ownable {
         redeemAmount = _redeemAmount;
     }
 
+    /**
+     * @dev Withdraw all ETH in contract
+     */
     function withdrawAll()
         public
         onlyOwner
@@ -42,16 +55,22 @@ contract RedeemCode is Ownable {
         _msgSender().transfer(address(this).balance);
     }
     
-    /*
+    /**
      * ----- Public Methods -----
      */
-    // Default payable function
+    
+    /**
+     * @dev Default payable function
+     */
     function()
         external
         payable
     {
     }
 
+    /**
+     * @dev Get the personal signature challenge for caller
+     */
     function getPersonalChallenge()
         public
         view
@@ -63,6 +82,9 @@ contract RedeemCode is Ownable {
         ));
     }
 
+    /**
+     * @dev Consume a redeem code
+     */
     function redeem(
         address _redeemCodeAddress,
         uint8 _v,
